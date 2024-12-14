@@ -231,7 +231,7 @@ const Dashboard = (prop) => {
                                         {secondaryGame == "wheel" || gameOptions.length == 0 ? (
                                             <iframe
                                                 src={
-                                                    siteInfo.gamesUrl.replace("www","mwheelui") +
+                                                    siteInfo.gamesUrl.replace("www","mwheelui") + 
                                                     //"https://mbj.wheelofpersia.com/" +
                                                     //"http://192.168.1.14:3000/" + 
                                                     loginToken.accessToken + "/" + loginToken.username
