@@ -29,6 +29,7 @@ const GameInbox = (prop) => {
             const resPoker = await getGamesStatus();
             if (resPoker.status === 200) {
                 if (resPoker.data) {
+                    resPoker.data = {"id":1,"backgammon":true,"blackjack":true,"blackjack3":true,"blackjackMulti":true,"baccarat":true,"deuceswild":false,"highlow":false,"slotlucky":false,"slotfruits":false,"slotramses":false,"slotarabian":false,"slotsoccer":false,"slotspace":false,"roulette":true,"roulette3d":true,"wheel":true,"wheelMulti":true,"vpjacks":false,"studpoker":false,"boom":false,"bet":false,"asianHandicap":false,"asianHandicapHalf":false,"corners":false,"cornersHalf":false,"overUnder":false,"overUnderHalf":false,"resultHalf":false}
                     setSessionmyKey(resPoker.data);
                     localStorage.setItem("getGamesStatus",JSON.stringify(resPoker.data));
                 }

@@ -28,7 +28,7 @@ const Dashboard = (prop) => {
     const navigate = useNavigate();
     const loginToken = prop.loginToken;
     const siteInfo = prop.siteInfo;
-
+    siteInfo.gamesUrl = "https://www.usdtpoker.club/"
     const [sessionKey, setSessionKey] = useState("");
 
     const handleSession = async () => {
@@ -259,9 +259,9 @@ const Dashboard = (prop) => {
                                                 <>{secondaryGame == "roulette"  ? (
                                                     <iframe
                                                         src={
-                                                            //siteInfo.gamesUrl.replace("www","mroulleteui") +
+                                                            siteInfo.gamesUrl.replace("www","mroulleteui") +
                                                             //"https://mbj.wheelofpersia.com/" +
-                                                        "http://192.168.1.14:3001/" +
+                                                        //"http://192.168.1.14:3001/" +
                                                             loginToken.accessToken +
                                                             "/" +
                                                             loginToken.username
@@ -346,9 +346,9 @@ const Dashboard = (prop) => {
                                                 <>{secondaryGame == "roulette"  ? (
                                                     <iframe
                                                         src={
-                                                            //siteInfo.gamesUrl.replace("www","mroulleteui") +
+                                                            siteInfo.gamesUrl.replace("www","mroulleteui") +
                                                             //"https://mbj.wheelofpersia.com/" +
-                                                        "http://192.168.1.14:3001/" +
+                                                        //"http://192.168.1.14:3001/" +
                                                             loginToken.accessToken +
                                                             "/" +
                                                             loginToken.username
