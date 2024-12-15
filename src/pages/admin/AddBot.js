@@ -16,16 +16,16 @@ import {
   Select,
   Radio,
 } from "semantic-ui-react";
-import Trans from "../../utils/getword";
-var validationSchema = Yup.object({
+
+const validationSchema = Yup.object({
   username: Yup.string()
 
-    .required(Trans("req_minUser"))
-    .min(3, Trans("req_minUser"))
-    .max(12, Trans("req_maxUser"))
+    .required("نام کاربری حداقل باشد 3 کاراکتر باشد.")
+    .min(3, "نام کاربری حداقل باشد 3 کاراکتر باشد.")
+    .max(12, "نام کاربری حداکثر باشد 12 کاراکتر باشد.")
     .matches(
       /^[a-zA-Z0-9]+$/,
-      Trans("req_mustUser")
+      "نام کاربری فقط می تواند شامل حروف لاتین و اعداد باشد."
     ),
 });
 const onSubmit = async (values, submitMethods, navigate, prop, setRefresh) => {
@@ -117,9 +117,9 @@ const depositArea = (prop) => {
                   <Button
                     type="button"
                     onClick={() => {
-                      formik.setFieldValue("role", "runner");
+                      formik.setFieldValue("role", "Runner");
                     }}
-                    positive={formik.values.role === "runner"}
+                    positive={formik.values.role === "Runner"}
                     disabled={formik.values.mode === "add"}
                   >
                     Runner

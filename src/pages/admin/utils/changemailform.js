@@ -4,13 +4,12 @@ import AuthFormikControl from "../../../components/authForm/AuthFormikControl";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { FormInput, FormGroup, FormButton } from "semantic-ui-react";
-import Trans from "../../../utils/getword";
 
 import { adminPutService } from "../../../services/admin";
 const validationSchema = Yup.object({
   value: Yup.string()
-    .required(Trans("req_email"))
-    .email(Trans("req_email")),
+    .required("لطفا یک ایمیل معتبر وارد کنید.")
+    .email("لطفا یک ایمیل معتبر وارد کنید."),
 });
 const onSubmit = async (values, submitMethods) => {
 
@@ -56,7 +55,7 @@ const depositArea = (prop) => {
                   control="input"
                   type="email"
                   name="value"
-                  label={Trans("email")}
+                  label="ایمیل"
                   labelcolor={prop.labelcolor}
                   size={prop.size}
                   autoComplete="email"
