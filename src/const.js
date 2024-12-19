@@ -717,8 +717,8 @@ function doCashoutDollar() {
     return _games;
 }
 
-export const doCurrency = (value) => {
-    var val = value?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+export const doCurrency = (value,fix) => {
+    var val = parseFloat(value).toFixed(fix || fix == 0 ? fix : 2)?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     return val;
     if (value >= 1000000000 || value <= -10000000000) {
         val =
@@ -730,7 +730,7 @@ export const doCurrency = (value) => {
     return val;
 };
 export const doCurrencyMil = (value, fix) => {
-    var val = doCurrency(parseFloat(value / 1000000).toFixed(fix || fix == 0 ? fix : 2)) + " M";
+    var val = doCurrency((value / 1000000),fix) + " M";
     return val;
     if (value >= 1000000000 || value <= -10000000000) {
         val =

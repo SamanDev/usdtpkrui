@@ -49,16 +49,14 @@ const LevelList = (prop) => {
                   <List.Content floated="right" className="rtl float-end ">
                     
                   
-                      <small className="farsi">{Trans("reward")}</small> <span className="text-gold">{doCurrency(x.reward)} <small className="text-gold">{Trans("unit")}</small> </span>
+                      <small className="farsi">{Trans("reward")} </small> <span className="text-gold"><small className="text-gold">{Trans("unit")}</small>{doCurrency(x.reward,0)} </span>
               
                     <div className="mysmall">
+                      
+                      <small className="farsi">{Trans("commitions")} & {Trans("rakeback")}</small>
                       <span className="text-gold">{x.commission}% </span>
-                      <small className="farsi">{Trans("commitions")}</small>
-                      <br />
-                      <span className="text-gold">{x.commission}% </span>
-                      <small className="farsi">{Trans("rakeback")}</small>
                       <div>
-                      <small className="farsi">{Trans("totalreward")}</small> {doCurrency(totalReward)} <small>{Trans("unit")}</small>
+                      <small className="farsi">{Trans("totalreward")}</small> {Trans("unit")}{doCurrency(totalReward,0)}
                        
                       </div>
                     </div>
