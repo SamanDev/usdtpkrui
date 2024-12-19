@@ -3021,7 +3021,7 @@
   var timer;
   var power = true;
   var key2 = "c3ngijv975b94u62uf62epuvjmpdrn1o1q2mbk2bqijtqt3";
-  var sL = "wss://socket.usdtpoker.club/pokers/";
+  var sL = "wss://socket.usdtpoker.club:2096/pokers/";
   var res = false;
   var timerId = 0;
   var online = true;
