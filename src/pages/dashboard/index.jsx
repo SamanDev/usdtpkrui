@@ -48,7 +48,7 @@ function SegmentExamplePlaceholderInline(prop) {
                                 className="farsi fw-normal fs-5"
                                 style={{
                                     position: "relative",
-                                    top: -50,
+                                    top: -20,
                                     color: "rgba(255,255,255,1)",
                                     
                                 }}

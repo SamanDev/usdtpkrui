@@ -6,10 +6,7 @@ import i18next from './i18n'
 
 i18next.t('my.key')
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "semantic-ui-css/semantic.min.css";
 
-import "./assets/css/style.css";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <TourSite />
