@@ -190,8 +190,8 @@ const levelDataInfoRules = () => {
     }
 };
 export const levelDataInfo = levelDataInfoRules();
-export const gameDataMain = "poker,roulette,blackjackmulti,baccarat,wheel,backgammon".split(",");
-export const gameDataMainName = "Poker,Roulette,Blackjack,Baccarat,Wheel,Backgammon".split(",");
+export const gameDataMain = "poker,roulette,blackjackmulti,baccarat,wheel,777slot".split(",");
+export const gameDataMainName = "Poker,Roulette,Blackjack,Baccarat,Wheel,777slot".split(",");
 export const gameDataMainCode = "poker,wheel,bet,backgammon".split(",");
 export const gameData = "boom,slotlucky,slotfruits,slotramses,slotarabian,slotsoccer,slotspace".split(",");
 export const gameDataName = "BoOoOoM,Slot Lucky Christmas,Slot Fruits,Slot Ramses,Slot Arabian,Slot Soccer,Slot Space".split(",");
@@ -281,10 +281,11 @@ export const depositData = [
     {
         key: "USDT",
         getwaykey: "USDT",
-        text: "USDT TRC20",
+        text: "Crypto Currencies",
         value: "USDT",
         icon: "dollar",
         limit: "Unlimited",
+        mode:"dodeposit",
         usd: false,
     },
 

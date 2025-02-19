@@ -19,6 +19,7 @@ import Report from "./Report";
 import Moment from "react-moment";
 import { doCurrency } from "../../../../const";
 import Trans from "../../../../utils/getword";
+import ShowAmount from "../../../../utils/ShowAmount";
 
 const moment = require("moment");
 
@@ -57,7 +58,7 @@ const depositArea = (prop) => {
                         {doCurrency((loginToken?.balance2).toFixed(2))}
                       </>
                     ) : (
-                      doCurrency(loginToken?.balance)
+                      <ShowAmount amount={loginToken?.balance} />
                     )}
                   </Statistic.Value>
                   <Statistic.Label className="farsi">

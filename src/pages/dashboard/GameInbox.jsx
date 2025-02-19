@@ -29,7 +29,7 @@ const GameInbox = (prop) => {
             const resPoker = await getGamesStatus();
             if (resPoker.status === 200) {
                 if (resPoker.data) {
-                    resPoker.data = {"id":1,"backgammon":true,"blackjack":true,"blackjack3":true,"blackjackMulti":true,"baccarat":true,"deuceswild":false,"highlow":false,"slotlucky":false,"slotfruits":false,"slotramses":false,"slotarabian":false,"slotsoccer":false,"slotspace":false,"roulette":true,"roulette3d":true,"wheel":true,"wheelMulti":true,"vpjacks":false,"studpoker":false,"boom":false,"bet":false,"asianHandicap":false,"asianHandicapHalf":false,"corners":false,"cornersHalf":false,"overUnder":false,"overUnderHalf":false,"resultHalf":false}
+                    resPoker.data = {"id":1,"backgammon":true,"blackjack":true,"blackjack3":true,"blackjackMulti":true,"baccarat":true,"deuceswild":false,"highlow":false,"777slot":true,"slotfruits":false,"slotramses":false,"slotarabian":false,"slotsoccer":false,"slotspace":false,"roulette":true,"roulette3d":true,"wheel":true,"wheelMulti":true,"vpjacks":false,"studpoker":false,"boom":false,"bet":false,"asianHandicap":false,"asianHandicapHalf":false,"corners":false,"slot":true,"overUnder":false,"overUnderHalf":false,"resultHalf":false}
                     setSessionmyKey(resPoker.data);
                     localStorage.setItem("getGamesStatus",JSON.stringify(resPoker.data));
                 }
@@ -52,32 +52,33 @@ const GameInbox = (prop) => {
                 <Grid.Row columns={2}>
                 <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={"/games/" + gameDataMain[0]} id={"open" + gameDataMain[0]}><Image src={"/assets/images/games/" + gameDataMain[0]+"-min.jpg"}  fluid    /></Link>
+                        <Link  name={"play " + gameDataMain[0]+" game"}  to={"/games/" + gameDataMain[0]} id={"open" + gameDataMain[0]}><Image src={"/assets/images/games/" + gameDataMain[0]+"-min.jpg"}  fluid    alt={"open " + gameDataMain[0]+" game"} /></Link>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={getPropertyNoCase(sessionmyKey,gameDataMain[1])?"/games/" + gameDataMain[1]:"#/games/" + gameDataMain[1]} id={"open" + gameDataMain[1]}><Image src={"/assets/images/games/" + gameDataMain[1]+"-min.jpg"}  fluid    /></Link>
+                        <Link name={"play " + gameDataMain[1]+" game"} to={getPropertyNoCase(sessionmyKey,gameDataMain[1])?"/games/" + gameDataMain[1]:"#/games/" + gameDataMain[1]} id={"open" + gameDataMain[1]}><Image src={"/assets/images/games/" + gameDataMain[1]+"-min.jpg"}  fluid   alt={"open " + gameDataMain[1]+" game"}  /></Link>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={getPropertyNoCase(sessionmyKey,gameDataMain[2])?"/games/" + gameDataMain[2]:"#/games/" + gameDataMain[2]} id={"open" + gameDataMain[2]}><Image src={"/assets/images/games/" + gameDataMain[2]+"-min.jpg"}  fluid    /></Link>
+                        <Link name={"play " + gameDataMain[2]+" game"} to={getPropertyNoCase(sessionmyKey,gameDataMain[2])?"/games/" + gameDataMain[2]:"#/games/" + gameDataMain[2]} id={"open" + gameDataMain[2]}><Image src={"/assets/images/games/" + gameDataMain[2]+"-min.jpg"}  fluid  alt={"open " + gameDataMain[2]+" game"}  /></Link>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={getPropertyNoCase(sessionmyKey,gameDataMain[3])?"/games/" + gameDataMain[3]:"#/games/" + gameDataMain[3]} id={"open" + gameDataMain[3]}><Image src={"/assets/images/games/" + gameDataMain[3]+"-min.jpg"}  fluid    /></Link>
+                        <Link name={"play " + gameDataMain[3]+" game"} to={getPropertyNoCase(sessionmyKey,gameDataMain[3])?"/games/" + gameDataMain[3]:"#/games/" + gameDataMain[3]} id={"open" + gameDataMain[3]}><Image src={"/assets/images/games/" + gameDataMain[3]+"-min.jpg"}  fluid    alt={"open " + gameDataMain[3]+" game"} /></Link>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={getPropertyNoCase(sessionmyKey,gameDataMain[4])?"/games/" + gameDataMain[4]:"#/games/" + gameDataMain[4]} id={"open" + gameDataMain[4]}><Image src={"/assets/images/games/" + gameDataMain[4]+"-min.jpg"}  fluid    /></Link>
+                        <Link name={"play " + gameDataMain[4]+" game"} to={getPropertyNoCase(sessionmyKey,gameDataMain[4])?"/games/" + gameDataMain[4]:"#/games/" + gameDataMain[4]} id={"open" + gameDataMain[4]}><Image src={"/assets/images/games/" + gameDataMain[4]+"-min.jpg"}  fluid   alt={"open " + gameDataMain[4]+" game"}  /></Link>
                     </Grid.Column>
                     <Grid.Column mobile={16} tablet={8} computer={8} >
                         
-                        <Link  to={getPropertyNoCase(sessionmyKey,gameDataMain[5])?"/games/" + gameDataMain[5]:"#/games/" + gameDataMain[5]} id={"open" + gameDataMain[5]}><Image src={"/assets/images/games/" + gameDataMain[5]+"-min.jpg"}  fluid    /></Link>
+                        <Link name={"play " + gameDataMain[5]+" game"} to={getPropertyNoCase(sessionmyKey,gameDataMain[5])?"/games/" + gameDataMain[5]:"#/games/" + gameDataMain[5]} id={"open" + gameDataMain[5]}><Image src={"/assets/images/games/" + gameDataMain[5]+"-min.jpg"}  fluid   alt={"open " + gameDataMain[5]+" game"}  /></Link>
                     </Grid.Column>
+                   
                     
 
                 </Grid.Row>
-                <Grid.Row columns={4}>
+          {/*       <Grid.Row columns={4}>
                     {gameData.map((submenu, i) => {
                         try {
                             var game = submenu.toLowerCase();
@@ -98,7 +99,7 @@ const GameInbox = (prop) => {
                         
                     
                     })}
-                </Grid.Row>
+                </Grid.Row> */}
             </Grid>
         </>
     );

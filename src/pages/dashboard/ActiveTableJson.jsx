@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { List, Statistic, Button } from "semantic-ui-react";
-import { activeColorList, activeColorList2, getEvent } from "../../const";
+import { activeColorList, activeColorList2, doCurrency, getEvent } from "../../const";
 import { MyToastActive } from "../../utils/myAlert";
 import { useActiveTable } from "../../hook/userHook";
 import $ from "jquery";
@@ -72,6 +72,7 @@ const ActiveTable = (prop) => {
                         {_event == "VIP" && parseInt(x.minstack / 20) >= parseInt(viprules.bigBlindLimit * 1000) && <small className="text-gold fw-lighter">VIP Table</small>}
                         {_event == "GPass" && parseInt(x.minstack / 20) >= parseInt(gpassrules.bigBlindLimit * 1000) && <small className="text-gold fw-lighter">GPass Table</small>}
                         {_event == "League" && <small className="text-gold fw-lighter">Daily League</small>}
+                        <small className="text-secondary fw-lighter">${doCurrency(x.minstack,0)} - {doCurrency(x.minstack * 5,0)}</small>
                     </Statistic.Label>
                     <Statistic.Value
                         style={

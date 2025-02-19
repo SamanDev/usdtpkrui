@@ -110,29 +110,27 @@ const Report = (prop) => {
                   ) : (
                     <List.Content>
                       <List.Description className="rightfloat">
+                      <AmountColor
+                          amount={item.endBalance}
+                          className="text-gold rightfloat"
+                        /><br/>
                         {convertDateToJalali(item.createDate)}
-                        <div className="text-end pad10tb">
+                     {/*    <div className="text-end pad10tb">
                           <Status status={item.status} size="mini" />
-                        </div>
+                        </div> */}
                       </List.Description>
                       <List.Description>
-                        <AmountColor amount={item.startBalance} />
-                        <br />
                         <AmountColor
                           amount={item.amount}
                           sign={item.endBalance - item.startBalance}
                         />
                         <br />
-                        --------------------
-                        <br />
-                        <AmountColor
-                          amount={item.endBalance}
-                          className="text-gold"
-                        />
-                        <div className="pad10tb">
+                      
+                        
+                        <small>
                           {item.mode} {item.gateway && <>({item.gateway})</>}{" "}
                           {item.amount2 > 0 && <>$({item.amount2})</>}
-                        </div>
+                        </small>
                       </List.Description>
                     </List.Content>
                   )}

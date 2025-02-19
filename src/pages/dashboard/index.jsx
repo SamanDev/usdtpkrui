@@ -1,13 +1,10 @@
 import React from "react";
-import { Button, Header, Icon, Segment, Image, Grid } from "semantic-ui-react";
-import $ from "jquery";
+import { Button, Header, Icon, Segment, Image } from "semantic-ui-react";
 import AnimIcon from "../../utils/inviteIcon";
 import GameInbox from "./GameInbox";
 import RewardStat from "./banners";
-import SiteStat from "./sitestats";
 import Trans from "../../utils/getword";
 
-import TransLang from "../../test";
 function SegmentExamplePlaceholderInline(prop) {
     const siteInfo = prop?.siteInfo;
     return (
@@ -22,7 +19,6 @@ function SegmentExamplePlaceholderInline(prop) {
                             width: "100%",
                             textAlign: "center",
                             opacity: 0.9,
-                           
                         }}
                     >
                         <AnimIcon icon="ilpmnyul" width="350px" height="500px" trigger="hover" stroke="4" colors="primary:#b5b5b5,secondary:#343c42" />
@@ -39,7 +35,6 @@ function SegmentExamplePlaceholderInline(prop) {
                                     width: "30vw",
                                     maxWidth: "200px",
                                     marginTop: 80,
-
                                 }}
                             />
                         </Icon>
@@ -50,37 +45,35 @@ function SegmentExamplePlaceholderInline(prop) {
                                     position: "relative",
                                     top: -20,
                                     color: "rgba(255,255,255,1)",
-                                    
                                 }}
-                            >{Trans("slogan")}
-                                 
+                            >
+                                {Trans("slogan")}
                             </strong>
                         </h2>
                     </Header>
                 </div>
-
+                <RewardStat {...prop} />
                 <GameInbox {...prop} />
             </div>
-            <RewardStat {...prop} />
-           
-                <Segment
-                    inverted
-                    className="fadeoust"
-                    style={{
-                        background: "rgba(0,0,0,.2)",
-
-                        overflow: "hidden",
-
-                        lineHeight: "30px",
-                    }}
-                >
-                    &copy; 2024
-                    <Button.Group floated="right" size="mini" inverted>
-                        <Button basic inverted as="a" icon="telegram" aria-label="telegram" href={"https://t.me/" + siteInfo?.telegramChanel} target="_blank" />
-                        <Button basic inverted icon="instagram" aria-label="instagram" as="a" href={"https://instagram.com/" + siteInfo?.instagram} target="_blank" />
-                    </Button.Group>
-                </Segment>
             
+
+            <Segment
+                inverted
+                className="fadeoust"
+                style={{
+                    background: "rgba(0,0,0,.2)",
+
+                    overflow: "hidden",
+
+                    lineHeight: "30px",
+                }}
+            >
+                &copy; 2024
+                <Button.Group floated="right" size="mini" inverted>
+                    <Button basic inverted as="a" icon="telegram" aria-label="telegram" href={"https://t.me/" + siteInfo?.telegramChanel} target="_blank" />
+                    <Button basic inverted icon="instagram" aria-label="instagram" as="a" href={"https://instagram.com/" + siteInfo?.instagram} target="_blank" />
+                </Button.Group>
+            </Segment>
         </>
     );
 }

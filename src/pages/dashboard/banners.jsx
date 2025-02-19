@@ -8,6 +8,7 @@ import ConfettiClick from "../../utils/partyclick";
 
 import ShowTimeLeft from "../../utils/showTimeLeft";
 import Trans from "../../utils/getword";
+import ShowAmount from "../../utils/ShowAmount";
 
 const moment = require("moment");
 
@@ -225,46 +226,7 @@ const Dashboard = (prop) => {
               }
               data-bs-interval="1000"
             >
-              {haveGift().length > 0 ? (
-                <>
-                  <Banner
-                    title="هدیه گلکسی"
-                    text={
-                      "ساعت " +
-                      getHour(
-                        haveGift()[0].startDate.replace("-08:00", ""),
-                        true
-                      )
-                    }
-                    icon="gifts"
-                    amin="inline animated swing "
-                    iconamin="swing"
-                    link=".giftarea"
-                    showtime={
-                      <ShowTimeLeft
-                        startDay={moment(
-                          haveGift()[0].startDate.replace("-08:00", "")
-                        ).format("D")}
-                        startHour={getHour(
-                          haveGift()[0].startDate.replace("-08:00", ""),
-                          false
-                        )}
-                        endDay={moment(
-                          haveGift()[0].expireDate.replace("-08:00", "")
-                        ).format("D")}
-                        endHour={getHour(
-                          haveGift()[0].expireDate.replace("-08:00", ""),
-                          false
-                        )}
-                      />
-                    }
-                    {...prop}
-                  />
-
-                  <ConfettiArea recycle={false} numberOfPieces="50" />
-                </>
-              ) : (
-                <>
+            
                   <div className="confettimain">
                     <ConfettiClick
                       active={
@@ -298,8 +260,7 @@ const Dashboard = (prop) => {
                   {dayOfTournament == nowDay && (
                     <ConfettiArea recycle={false} numberOfPieces="50" />
                   )}
-                </>
-              )}
+               
             </div>
 
        
@@ -312,7 +273,11 @@ const Dashboard = (prop) => {
             >
               <>
                 <Banner
-                  title={Trans("banner_levelheader")}
+                  title={
+                  <>{Trans("banner_levelheader")} 
+                  <ShowAmount amount={400000} color={true} />
+                  </>
+                  }
                   text={Trans("banner_levelslogan")}
                   link=".levels"
                   icon="levels"
@@ -323,16 +288,7 @@ const Dashboard = (prop) => {
                 />
               </>
             </div>
-            {_width > 500 && 1 == 2 && (
-              <div className="carousel-item " data-bs-interval="1000">
-                <Banner
-                  image="/assets/images/calendar.gif"
-                  title="بیش از ۵۰۰ میلیون"
-                  text="جوایز ماهانه"
-                  {...prop}
-                />
-              </div>
-            )}
+           
           </div>
           <button
             className="carousel-control-prev"

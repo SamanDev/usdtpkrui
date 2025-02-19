@@ -5,6 +5,7 @@ import CartToCartOnline from "./CartToCartnew";
 
 import BankTransfer from "./BankTransfer";
 import PerfectMoney from "./PerfectMoney";
+import ShowAmount from "../../../../utils/ShowAmount";
 
 import USDT from "./USDT";
 
@@ -28,8 +29,8 @@ const depositArea = (prop) => {
         </>
       ) : (
         <>
-          <Segment inverted className="blnc" size="mini">
-          <Statistic inverted size="tiny">
+          <Segment inverted className="blnc">
+                <Statistic inverted size="tiny">
                   <Statistic.Value>
                     {prop.menu?.usd ? (
                       <>
@@ -38,14 +39,14 @@ const depositArea = (prop) => {
                         {doCurrency((loginToken?.balance2).toFixed(2))}
                       </>
                     ) : (
-                      doCurrency(loginToken?.balance)
+                      <ShowAmount amount={loginToken?.balance} />
                     )}
                   </Statistic.Value>
                   <Statistic.Label className="farsi">
                   {Trans("yourbalance")}
                   </Statistic.Label>
                 </Statistic>
-          </Segment>
+              </Segment>
           {depMode == "Bank Transfer" && (
             <>
               {loginToken?.bankInfos.length > 0 ? (

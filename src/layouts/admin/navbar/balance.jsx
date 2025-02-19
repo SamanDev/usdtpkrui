@@ -337,7 +337,7 @@ const Balance = (prop) => {
                         className="cashierarea"
                         onClick={() => {
                         
-                            prop.openPanel(".deposit");
+                            prop.openPanel(".DepositUSDT");
                           
                         }}
                       />
@@ -352,7 +352,7 @@ const Balance = (prop) => {
                         link
                         onClick={() => {
                         
-                          prop.openPanel(".cashout");
+                          prop.openPanel(".CashoutUSDT");
                         
                       }}
                       />

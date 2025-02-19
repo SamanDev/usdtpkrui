@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { List } from "semantic-ui-react";
 import Reward from "../../utils/BigWins";
 import MenuLoader from "../../utils/menuLoader";
 
-import eventBus from "../../services/eventBus";
-import RewardStat from "./rewardStat";
-import LazyLoad from "react-lazyload";
 import axios from "axios";
 const getWins = () => {
-    const SERVICE_URL_SAVE = "https://gwheelserver.onrender.com";
+    const SERVICE_URL_SAVE = "https://gamedata.usdtpoker.club";
     //const SERVICE_URL_SAVE = "http://localhost:2525";
     
 
@@ -58,7 +54,7 @@ const ActiveTable = (prop) => {
             .map(function (bonus, i) {
               return (
                   <div
-                    className={bonus?.game + " rewardname"}
+                    className={bonus?.game.replace("777","") + " rewardname"}
                     
                   >
                     <Reward item={bonus} color={false} {...prop} />

@@ -4,6 +4,8 @@ import { doCurrency, levelClassInside } from "../../const";
 import LevelIcon from "../../utils/svg";
 
 import LevelBar from "../../utils/LevelBar";
+
+import ShowAmount from "../../utils/ShowAmount";
 import LastRewardList from "./LastRewardList";
 import LazyLoad from "react-lazyload";
 import Trans from "../../utils/getword";
@@ -49,7 +51,7 @@ const LevelList = (prop) => {
                   <List.Content floated="right" className="rtl float-end ">
                     
                   
-                      <small className="farsi">{Trans("reward")} </small> <span className="text-gold"><small className="text-gold">{Trans("unit")}</small>{doCurrency(x.reward,0)} </span>
+                      <small className="farsi">{Trans("reward")} </small> <ShowAmount amount={x.reward}/>
               
                     <div className="mysmall">
                       

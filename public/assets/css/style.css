@@ -5,7 +5,18 @@ body {
 
     overflow-x: hidden !important;
 }
+.t80{
+    font-size:80%;
+    opacity: 80%;
+}
+.t60{
+    font-size:60%;
+  
+    opacity: 60%;
+}
+.amountgroup{
 
+}
 .dplock {
     display: block;
     min-width: 190px;
@@ -342,13 +353,30 @@ a {
 }
 .xwin{
     left: 80px;
-    top: 20px;
-    font-size: 50px;
-    color: rgba(255, 255, 255, 0.05);
+top: 0px;
+font-size: 40px;
+color: rgba(255, 255, 255, 0.1);
+position: absolute;
+font-family: monospace;
+font-weight: bold;
+transform: rotate(25deg);
+}
+.rewardname {
+    position: relative;
+    overflow: hidden;
+}
+.rewardname:before {
+    display: block;
+    transform: scale(0.4);
+    
     position: absolute;
-    font-family: monospace;
-    font-weight: bold;
-    transform: rotate(25deg);
+    text-align: center;
+    width: 100%;
+    right: 0;
+    left: -50%;
+    opacity: .1;
+    top: -50%;
+    bottom: 0;
 }
 .rewardname img{
     filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.443));
@@ -358,21 +386,42 @@ a {
     padding-left: 15px;
     margin-left: -15px;
 }
+.rewardname.BlackjackMulti:before {
+    content: url(../images/games/blackjackmulti-min.jpg) !important;
+  }
 .Roulette.rewardname{
     background: linear-gradient(rgb(38, 28, 28), rgb(64, 48, 48) 98.9%);
     padding-left: 15px;
     margin-left: -15px;
 }
+.rewardname.Roulette:before {
+    content: url(../images/games/roulette-min.jpg) !important;
+  }
 .Baccarat.rewardname{
     background: linear-gradient(rgb(38, 28, 38), rgb(63, 48, 64) 98.9%);
     padding-left: 15px;
     margin-left: -15px;
 }
+.rewardname.Baccarat:before {
+    content: url(../images/games/baccarat-min.jpg) !important;
+  }
+
 .Wheel.rewardname{
     background: linear-gradient(rgb(28, 29, 38), rgb(55, 78, 109) 98.9%);
     padding-left: 15px;
     margin-left: -15px;
 }
+.rewardname.Wheel:before {
+    content: url(../images/games/wheel-min.jpg) !important;
+  }
+.rewardname.Slot{
+    
+    padding-left: 15px;
+    margin-left: -15px;
+}
+.rewardname.Slot:before {
+    content: url(../images/games/777slot-min.jpg) !important;
+  }
 .mm-navbars:before {
     display: block;
     transform: scale(0.7);
