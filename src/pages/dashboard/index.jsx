@@ -4,6 +4,7 @@ import AnimIcon from "../../utils/inviteIcon";
 import GameInbox from "./GameInbox";
 import RewardStat from "./banners";
 import Trans from "../../utils/getword";
+import GoogleLogin from "../../utils/loginGoogle";
 
 function SegmentExamplePlaceholderInline(prop) {
     const siteInfo = prop?.siteInfo;
@@ -52,6 +53,13 @@ function SegmentExamplePlaceholderInline(prop) {
                         </h2>
                     </Header>
                 </div>
+            
+
+               
+
+<GoogleLogin
+  
+/>;
                 <RewardStat {...prop} />
                 <GameInbox {...prop} />
             </div>
