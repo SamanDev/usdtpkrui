@@ -1,14 +1,14 @@
 import React from "react";
 
 import { GoogleLogin } from '@react-oauth/google';
-import { loginService } from "../services/auth";
+import { googleLoginService } from "../services/auth";
 
 const onSubmit = async (values) => {
     try {
         var _newValues = values;
        
 
-        const res = await loginService(_newValues);
+        const res = await googleLoginService(_newValues);
         if (res.status == 200) {
             if (res.data.accessToken) {
                 if (res.data.userBlock) {

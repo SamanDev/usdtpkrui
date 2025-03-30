@@ -5,6 +5,11 @@ export const loginService = (values) => {
     ...values,
   });
 };
+export const googleLoginService = (values) => {
+  return httpService("/auth/googleLogin", "post", {
+    ...values,
+  });
+};
 export const registerService = (values) => {
   return httpService("/auth/signup", "post", {
     ...values,
