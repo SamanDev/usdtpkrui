@@ -14,9 +14,16 @@ body {
   
     opacity: 60%;
 }
-.amountgroup{
-
-}
+.amountgroup {
+   
+    height: 210px;
+    }
+    .amountgroup .button{
+        width: 47%;
+        float: left;
+        margin-left: 4px;
+        margin-bottom: 4px;
+        }
 .dplock {
     display: block;
     min-width: 190px;
@@ -1280,6 +1287,7 @@ a.mm-listitem__text {
     background: transparent !important;
     margin-top: -5px;
     padding: 0 15px;
+    font-family: "Kanit" !important;
 }
 .ui.black.label.balanceLableprofile {
     position: absolute;

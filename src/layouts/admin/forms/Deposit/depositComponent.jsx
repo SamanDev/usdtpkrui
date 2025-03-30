@@ -4,7 +4,7 @@ import CartToCart from "./CartToCartnew";
 import CartToCartOnline from "./CartToCartnew";
 
 import BankTransfer from "./BankTransfer";
-import PerfectMoney from "./PerfectMoney";
+
 import ShowAmount from "../../../../utils/ShowAmount";
 
 import USDT from "./USDT";
@@ -126,15 +126,6 @@ const depositArea = (prop) => {
           )}
           {depMode == "VisaGiftCode" && <VisaGiftCode {...prop} />}
 
-          {depMode == "PerfectMoney" && (
-            <>
-              {prop.menu?.usd ? (
-                <PerfectMoney {...prop} />
-              ) : (
-                <PerfectMoney {...prop} />
-              )}
-            </>
-          )}
         </>
       )}
     </>

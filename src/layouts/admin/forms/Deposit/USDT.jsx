@@ -14,7 +14,7 @@ import ShowAmount from "../../../../utils/ShowAmount";
 
 import { Button, Progress, Label, Icon } from "semantic-ui-react";
 
-var amounts = [{ value: 25 }, { value: 50 }, { value: 100 }, { value: 250 }, { value: 500 }, { value: 1000 }, { value: 2500 }, { value: 5000 }, { value: 10000 }];
+var amounts = [{ value: 25 }, { value: 50 }, { value: 100 }, { value: 250 }, { value: 500 }, { value: 1000 }, { value: 2500 }, { value: 5000 }, { value: 10000 }, { value: 20000 }];
 const initialValues = {
     action: "payment",
     amount: 50,
@@ -60,7 +60,7 @@ const depositArea = (prop) => {
                                         onClick={() => {
                                             formik.setFieldValue("amount", amo.value);
                                         }}
-                                    ><ShowAmount amount={amo.value} />
+                                    ><ShowAmount amount={amo.value} color={true} />
                                   
                                        
                                     </Button>

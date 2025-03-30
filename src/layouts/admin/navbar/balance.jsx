@@ -13,6 +13,8 @@ import { MyConfirm, MyDeposit } from "../../../utils/myAlert";
 import { getHelp } from "../../../utils/getHelp";
 import LevelIcon from "../../../utils/svg";
 import CountUp from "../../../utils/CountUp";
+import ShowAmount from "../../../utils/ShowAmount";
+
 import BonusArea from "../bonus/index.jsx";
 import $ from "jquery";
 import { cashierService } from "../../../services/cashier";
@@ -312,8 +314,9 @@ const Balance = (prop) => {
               onClick={() => {
                 $("#opendepicon").trigger("click");
               }}
-            >
-              <CountUp balance={loginToken.balance} />
+            ><ShowAmount amount={loginToken.balance} color={true}/>
+         
+         
             </Label>
             {loginToken?.refer != "runner" && loginToken?.refer != "bots" && (
               <>

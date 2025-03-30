@@ -64,7 +64,7 @@
     "unit":"$",
     "pokerrakeback": "Poker Rakeback",
     "friendcommitions":"Friends Commission",
-    "levelsreward":"Bonus level increase",
+    "levelsreward":"Level Up Reward",
     "stat_paytouser":"Paid to: 000 players",
     "stat_lastrec":"in last 500 records",
     "invite_linktitle":"Invite your friends with a special link",
@@ -93,6 +93,6 @@
     "connectagain":"Reconnect",
     "loading":"Please wait...",
     "activeemail":"You must first confirm your email to use this service.",
-    "deposit":"Buy a chip"
+    "deposit":"Buy Chips"
     
     }

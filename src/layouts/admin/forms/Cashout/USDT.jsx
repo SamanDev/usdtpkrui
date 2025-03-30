@@ -13,7 +13,10 @@ import Trans from "../../../../utils/getword";
 import AddSchema from "../../../../utils/schema";
 import { Button, Progress,Icon, Divider,Label } from "semantic-ui-react";
 import DollarSelect from "../../../../components/form/dollarSelect";
+import ShowAmount from "../../../../utils/ShowAmount";
+
 var amounts = [
+  { value: 50 },
   { value: 100 },
   { value: 200 },
   { value: 300 },
@@ -22,6 +25,9 @@ var amounts = [
   { value: 2500 },
   { value: 5000 },
   { value: 10000 },
+  { value: 25000 },
+  { value: 50000 },
+  { value: 100000 },
 
 ];
 const onSubmit = async (values, submitMethods, navigate, prop, setRefresh) => {
@@ -93,35 +99,29 @@ const depositArea = (prop) => {
       {(formik) => {
         return (
           <Form>
-             <Button.Group vertical fluid  type="button">
-            {amounts.map((amo,i) => {
-                 
-                      return (
-                    <Button
-                      type="button"
-                      key={amo.value}
-                      icon labelPosition='right'
-                      className="farsi"
-                      color={
-                        formik.values.amount == amo.value ? "red" : "grey"
-                      }
-                      onClick={() => {
-                        formik.setFieldValue("amount", amo.value);
-                      }}
-                      disabled={
-                        loginToken.balance < amo.value ? true : false
-                      }
-                    >
-                     
-                      {doCurrency(amo.value)}
-                      <Icon className="usdbtn farsi">{Trans("unit")}</Icon>
+             <div className="amountgroup" style={{height:240}}>
+                            {amounts.map((amo, i) => {
+                                return (
+                                    <Button
+                                        type="button"
+                                        key={amo.value}
+                                      
+                                        className="farsi"
+                                        color={formik.values.amount == amo.value ? "red" : "black"}
+                                        onClick={() => {
+                                            formik.setFieldValue("amount", amo.value);
+                                        }}
+                                        disabled={
+                                          loginToken.balance < amo.value ? true : false
+                                        }
+                                    ><ShowAmount amount={amo.value} color={true} />
+                                  
+                                       
+                                    </Button>
+                                );
+                            })}
+                        </div>
              
-                    </Button>
-                  );
-                  }
-                
-                )}
-              </Button.Group>
              <Divider/>
             <FormikControl
               formik={formik}
@@ -160,7 +160,7 @@ const depositArea = (prop) => {
 
             <CashoutButton
               {...prop}
-              disabled={formik.isSubmitting}
+              disabled={formik.isSubmitting || formik.values.amount==0}
               loading={formik.isSubmitting}
               refresh={refresh}
             />

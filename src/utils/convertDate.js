@@ -1,4 +1,3 @@
-import jMoment from "jalali-moment";
 const moment = require("moment");
 export const convertDateToJalali = (d, f) => {
   try {
@@ -11,7 +10,7 @@ export const convertDateToJalali = (d, f) => {
     _f = f;
   }
   return (
-    <div className="date" title={jMoment(date).format("jYYYY/jMM/jDD")}>
+    <div className="date">
       {moment(date).format("YYYY/MM/DD")}{" "}
       <span className="time">{moment(date).format(_f)}</span>
     </div>

@@ -3,6 +3,8 @@ import { List, Statistic, Button } from "semantic-ui-react";
 import { activeColorList, activeColorList2, doCurrency, getEvent } from "../../const";
 import { MyToastActive } from "../../utils/myAlert";
 import { useActiveTable } from "../../hook/userHook";
+import ShowAmount from "../../utils/ShowAmount";
+
 import $ from "jquery";
 const groupBy = (array, key) => {
     // Return the end result
@@ -72,7 +74,7 @@ const ActiveTable = (prop) => {
                         {_event == "VIP" && parseInt(x.minstack / 20) >= parseInt(viprules.bigBlindLimit * 1000) && <small className="text-gold fw-lighter">VIP Table</small>}
                         {_event == "GPass" && parseInt(x.minstack / 20) >= parseInt(gpassrules.bigBlindLimit * 1000) && <small className="text-gold fw-lighter">GPass Table</small>}
                         {_event == "League" && <small className="text-gold fw-lighter">Daily League</small>}
-                        <small className="text-secondary fw-lighter">${doCurrency(x.minstack,0)} - {doCurrency(x.minstack * 5,0)}</small>
+                        <small className="text-secondary fw-lighter"><ShowAmount amount={x.minstack} color={true}/> - <ShowAmount amount={x.minstack * 5} color={true}/></small>
                     </Statistic.Label>
                     <Statistic.Value
                         style={
@@ -175,7 +177,7 @@ const ActiveTable = (prop) => {
         _filterData?.map(function (x, i) {
             var aarName = x.name.split(" ");
 
-            if (x.minstack < loginToken?.balance && x.status.indexOf("1/") > -1 && x?.class.indexOf("update") > -1 && x.name.indexOf(fil) !== -1 && !prop.activePanel) {
+            if (x.minstack < loginToken?.balance && x.status.indexOf("2/") > -1 && x?.class.indexOf("update") > -1 && x.name.indexOf(fil) !== -1 && !prop.activePanel) {
                 MyToastActive(x, prop.handleOpenTable);
             }
         });

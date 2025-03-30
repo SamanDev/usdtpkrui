@@ -178,13 +178,13 @@ const Dashboard = (prop) => {
   const goPrev = () => {
     var _ddef = activeSlide - 1;
     if (_ddef < 0) {
-      _ddef = 2;
+      _ddef = 1;
     }
     setActiveSlide(_ddef);
   };
   const goNext = () => {
     var _ddef = activeSlide + 1;
-    if (_ddef > 2) {
+    if (_ddef > 1) {
       _ddef = 0;
     }
     setActiveSlide(_ddef);

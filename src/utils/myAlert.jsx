@@ -105,13 +105,13 @@ export const MyToastActive = (title, handleOpenTable) => {
     showCloseButton: true,
     buttonsStyling: false,
     customClass: {
-      htmlContainer: "position-absolute p-2 lh-base",
+      htmlContainer: "p-2 lh-base",
       timerProgressBar: "bg-gold",
       actions: "",
-      confirmButton: "ui button mini red",
+      confirmButton: "position-absolute ui button mini red",
     },
     background: "#000",
-    timer: 3000,
+    timer: 300000,
     timerProgressBar: true,
   });
 
