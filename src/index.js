@@ -9,7 +9,7 @@ i18next.t('my.key')
 
 
 createRoot(document.getElementById("root")).render(
-  <GoogleOAuthProvider clientId="168227557000-ad9meorqgd5i83apn23th0paqr3qn2m0.apps.googleusercontent.com" loginUri="https://api.usdtpoker.club/api/req/googleLogin"><BrowserRouter>
+  <GoogleOAuthProvider clientId="168227557000-ad9meorqgd5i83apn23th0paqr3qn2m0.apps.googleusercontent.com"><BrowserRouter>
     <TourSite />
   </BrowserRouter></GoogleOAuthProvider>
 );

@@ -1,12 +1,11 @@
 import React from "react";
 
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin } from "@react-oauth/google";
 import { googleLoginService } from "../services/auth";
 
 const onSubmit = async (values) => {
     try {
         var _newValues = values;
-       
 
         const res = await googleLoginService(_newValues);
         if (res.status == 200) {
@@ -18,33 +17,25 @@ const onSubmit = async (values) => {
                     prop.setIsUser(true);
                     prop.setFirstOpen(false);
 
-
                     //window.location.reload();
                 }
             }
         }
-        
-    } catch (error) {
-       
-
-    }
+    } catch (error) {}
 };
 
 function SegmentExamplePlaceholderInline(prop) {
     return (
         <>
-           
-
-<GoogleLogin
-  onSuccess={credentialResponse => {
-    console.log(credentialResponse.credential);
-    onSubmit({credential:credentialResponse.credential});
-  }}
-  onError={() => {
-    console.log('Login Failed');
-  }}
-/>;
-               
+            <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                    console.log(credentialResponse.credential);
+                    onSubmit({ credential: credentialResponse.credential });
+                }}
+                onError={() => {
+                    console.log("Login Failed");
+                }}
+            />
         </>
     );
 }

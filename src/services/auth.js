@@ -6,7 +6,7 @@ export const loginService = (values) => {
   });
 };
 export const googleLoginService = (values) => {
-  return httpService("/auth/googleLogin", "post", {
+  return httpService("/auth/googleSignin", "post", {
     ...values,
   });
 };

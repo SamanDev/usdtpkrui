@@ -6,6 +6,7 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Alert } from "../../../utils/alerts";
 import Trans from "../../../utils/getword";
+import GoogleLogin from "../../../utils/loginGoogle";
 
 import { loginService, getUserService } from "../../../services/auth";
 import eventBus from "../../../services/eventBus";
@@ -125,6 +126,8 @@ const depositArea = (prop) => {
                                 {Trans("loginheader")}
                             </Header>
                             <Divider hidden />
+<GoogleLogin/>
+<Divider inverted  horizontal>Or</Divider>
                             {/* {keysArea()} */}
                             <AuthFormikControl formik={formik} control="input" type="text" name="username" label={Trans("username")} labelcolor={prop.labelcolor} size={prop.size} maxLength="12" autoComplete="username" />
                             <AuthFormikControl formik={formik} control="input" type="password" name="password" label={Trans("password")} labelcolor={prop.labelcolor} size={prop.size} autoComplete="password" />
