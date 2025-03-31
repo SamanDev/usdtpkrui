@@ -28,6 +28,10 @@ function SegmentExamplePlaceholderInline(prop) {
     return (
         <>
             <GoogleLogin
+            theme="filled_blue"
+            size="large"
+            text="continue_with"
+            auto_select={false}
                 onSuccess={(credentialResponse) => {
                     console.log(credentialResponse.credential);
                     onSubmit({ credential: credentialResponse.credential });

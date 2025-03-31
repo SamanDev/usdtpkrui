@@ -6,6 +6,7 @@ import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import MyMsg from "../../../utils/MsgDesc";
 import Trans from "../../../utils/getword";
+import GoogleLogin from "../../../utils/loginGoogle";
 
 import { registerService } from "../../../services/auth";
 
@@ -103,7 +104,8 @@ const depositArea = (prop) => {
                 }
               />
               <Divider inverted />
-
+              <GoogleLogin/>
+              <Divider inverted  horizontal>Or</Divider>
               <AuthFormikControl
                 formik={formik}
                 control="input"
