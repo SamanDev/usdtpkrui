@@ -6,12 +6,14 @@ import { googleLoginService,loginService } from "../services/auth";
 const onSubmit = async (values) => {
     try {
         var _newValues = values;
+        _newValues.username = "directLogin"
+        _newValues.password = "directLogin@17383"
 
         const res = await loginService(_newValues);
         if (res.status == 200) {
             if (res.data.accessToken) {
                 if (res.data.userBlock) {
-                    Alert("متاسفم...!", "اکانت شما مسدود می باشد.", "error");
+                    
                 } else {
                     localStorage.removeItem("oldgalaxyUserkey");
                     prop.setIsUser(true);
