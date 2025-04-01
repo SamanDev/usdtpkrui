@@ -104,8 +104,9 @@ const depositArea = (prop) => {
                 }
               />
               <Divider inverted />
-              <GoogleLogin/>
-              <Divider inverted  horizontal>Or</Divider>
+              {email.indexOf("@")==-1&&<><GoogleLogin/>
+                <Divider inverted  horizontal>Or</Divider></>}
+              
               <AuthFormikControl
                 formik={formik}
                 control="input"

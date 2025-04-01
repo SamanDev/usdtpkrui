@@ -126,7 +126,7 @@ const depositArea = (prop) => {
                                 {Trans("loginheader")}
                             </Header>
                             <Divider hidden />
-<GoogleLogin/>
+<GoogleLogin {...prop}/>
 <Divider inverted  horizontal>Or</Divider>
                             {/* {keysArea()} */}
                             <AuthFormikControl formik={formik} control="input" type="text" name="username" label={Trans("username")} labelcolor={prop.labelcolor} size={prop.size} maxLength="12" autoComplete="username" />
