@@ -12,6 +12,7 @@
     "firebase": "^9.7.0",
     "formik": "^2.2.9",
     "html-to-image": "^1.9.0",
+    "json-edit-react": "^1.29.0",
     "i18next": "^23.15.1",
     "mburger-webcomponent": "^3.1.1",
     "mmenu-js": "^9.3.0",

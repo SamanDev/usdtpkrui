@@ -157,6 +157,8 @@ const Dashboard = (prop) => {
             value: "",
         });
         {
+            console.log(gameDataMain);
+            
             gameDataMain.map((gamename, i) => {
                 var game = gamename.toLowerCase();
                 //console.log(game,defGamesStatus[game],mainGame)
