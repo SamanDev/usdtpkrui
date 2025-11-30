@@ -14,22 +14,106 @@ const LevelList = (prop) => {
 
   const [loading, setLoading] = useState(true);
   const handleGetRewards = async () => {
-    setLoading(true);
-    try {
-      const res = await getRewardsService(
-        "",
-        prop.mode,
-        "",
-        prop.mode == "levels" ? 500 : 500
-      );
-      if (res.status === 200) {
-        setData(res.data.filter((d) => d.amount>0 ||d.amount2>0 ).sort((a, b) => (a.date < b.date ? 1 : -1)));
-        setLoading(false);
-      }
-    } catch (error) {
-      ////console.log(error.message);
-    }
-  };
+        setLoading(true);
+        try {
+            const res = await getRewardsService("", prop.mode, "", prop.mode == "levels" ? 500 : 500, 1);
+            if (res.status === 200) {
+                const start = new Date();
+                start.setDate(1);
+                start.setHours(0, 0, 0, 0);
+
+                const end = new Date();
+                end.setDate(31);
+                end.setHours(23, 59, 59, 999);
+                end.getTime();
+                start.getTime();
+
+                if (prop.mode == "gpass" || prop.mode == "vip" || prop.mode == "league") {
+                    var _data = res.data
+                        .filter((item) => {
+                            let date = new Date(item.date).getTime();
+                            return date >= start && date <= end;
+                        })
+                        .sort((a, b) => (a.date < b.date ? 1 : -1));
+                } else {
+                    var _data = res.data.sort((a, b) => (a.date < b.date ? 1 : -1));
+                }
+
+                if (_data.length == 0) {
+                    start.setMonth(end.getMonth() - 2);
+                    end.getTime();
+                    start.getTime();
+
+                    _data = res.data
+                        .filter((item) => {
+                            let date = new Date(item.date).getTime();
+                            return date >= start && date <= end;
+                        })
+                        .sort((a, b) => (a.date < b.date ? 1 : -1));
+                }
+               
+                if (_data.length == 500) {
+                    handleGetRewards2(_data,2);
+                }else{
+                    setData(_data);
+                    setLoading(false);
+                }
+            }
+        } catch (error) {
+            ////console.log(error.message);
+        }
+    };
+    const handleGetRewards2 = async (data,page) => {
+        //setLoading(true);
+        try {
+            const res = await getRewardsService("", prop.mode, "", prop.mode == "levels" ? 500 : 500, page);
+            if (res.status === 200) {
+                const start = new Date();
+                start.setDate(1);
+                start.setHours(0, 0, 0, 0);
+
+                const end = new Date();
+                end.setDate(31);
+                end.setHours(23, 59, 59, 999);
+                end.getTime();
+                start.getTime();
+
+                if (prop.mode == "gpass" || prop.mode == "vip" || prop.mode == "league") {
+                    var _data = res.data
+                        .filter((item) => {
+                            let date = new Date(item.date).getTime();
+                            return date >= start && date <= end;
+                        })
+                        .sort((a, b) => (a.date < b.date ? 1 : -1));
+                } else {
+                    var _data = res.data.sort((a, b) => (a.date < b.date ? 1 : -1));
+                }
+
+                if (_data.length == 0) {
+                    start.setMonth(end.getMonth() - 2);
+                    end.getTime();
+                    start.getTime();
+
+                    _data = res.data
+                        .filter((item) => {
+                            let date = new Date(item.date).getTime();
+                            return date >= start && date <= end;
+                        })
+                        .sort((a, b) => (a.date < b.date ? 1 : -1));
+                }
+                _data = data.concat(_data);
+                
+                if (_data.length == page*500 && _data.length < 4000) {
+                    handleGetRewards2(_data,(page+1));
+                }else{
+                    setData(_data);
+                setLoading(false);
+                }
+            }
+        } catch (error) {
+            ////console.log(error.message);
+        }
+    };
 
   useEffect(() => {
     handleGetRewards();

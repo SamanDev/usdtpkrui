@@ -113,11 +113,11 @@ const RewardStat = (prop) => {
                                                             <LevelIcon level={_lvl} text={"big"} mode={bonus.mode} classinside={levelClassInside(_lvl)} number="" width={bonus.mode == "gifts" ? "100px" : "80px"} />
                                                         </div>
 
-                                                        <small className="farsi text-center" style={{ display: "block" }}>
+                                                        <div className="farsi text-center" style={{ display: "block" }}>
                                                             {_total} <ShowAmount amount={bonus.sum} />
-                                                            <br /> {_paytouser.replace("000", doCurrency(bonus.players))}
-                                                            <br /> {_paytolast}
-                                                        </small>
+                                                            <br /> {_paytouser.replace("000", doCurrency(bonus.players,0))}
+                                                            <br /> {_paytolast.replace("500", doCurrency(bonus.count,0))}
+                                                        </div>
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
@@ -184,12 +184,12 @@ const RewardStat = (prop) => {
                                                             <LevelIcon level={_lvl} text={"big"} mode={bonus.mode} classinside={levelClassInside(_lvl)} number="" width={bonus.mode == "gifts" ? "100px" : "80px"} />
                                                         </div>
 
-                                                        <small className="farsi text-center" style={{ display: "block" }}>
+                                                        <div className="farsi text-center" style={{ display: "block" }}>
                                                             {_total}{" "}
                                                             <ShowAmount amount={bonus.sum} />
                                                             <br /> {_paytouser.replace("000", doCurrency(bonus.players,0))}
-                                                            <br /> {_paytolast}{" "}
-                                                        </small>
+                                                            <br /> {_paytolast.replace("500", doCurrency(bonus.count,0))}
+                                                        </div>
                                                     </Grid.Column>
                                                 </Grid.Row>
                                             </Grid>
