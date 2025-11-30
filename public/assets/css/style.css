@@ -422,10 +422,10 @@ a {
 }
 
 .xwin {
-    left: 80px;
-    top: 0px;
-    font-size: 40px;
-    color: rgba(255, 255, 255, 0.1);
+        left: 90px;
+    top: 21px;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.31);
     position: absolute;
     font-family: monospace;
     font-weight: bold;
