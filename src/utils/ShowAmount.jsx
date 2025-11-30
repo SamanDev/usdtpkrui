@@ -9,7 +9,7 @@ const ShowAmount = ({amount,color}) => {
 
     return (
       <>
-        <span className={!color?"text-gold":""}><small className="t80">{Trans("unit")}</small>{doCurrency(getamount,0)}<span className="t60">.{getriz}</span></span>
+        <span className={!color?"text-gold":""}><small className="t80">{Trans("unit")}</small>{doCurrency(getamount,0)}<span className="t80">.{getriz}</span></span>
       </>
     );
   

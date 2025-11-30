@@ -275,7 +275,7 @@ const Dashboard = (prop) => {
                 <Banner
                   title={
                   <>{Trans("banner_levelheader")} 
-                  <ShowAmount amount={400000} color={true} />
+                  <ShowAmount amount={4000000} color={true} />
                   </>
                   }
                   text={Trans("banner_levelslogan")}

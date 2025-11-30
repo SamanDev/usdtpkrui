@@ -83,12 +83,12 @@ const ActiveTable = (prop) => {
             overflow: "hidden",
           }}
         >
-          <div className={"animated fadeIn"}>
+        {/*   <div className={"animated fadeIn"}>
             <RewardStat lastReward={_sortData} title="no" />
-          </div>
+          </div> */}
 
           {_sortData
-            .filter((d) => d.mode != "Bonus")
+            .filter((d) => d.amount >= 100)
             .map(function (bonus, i) {
               return (
                 <LazyLoad key={i} height={100}>

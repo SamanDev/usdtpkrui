@@ -30,44 +30,20 @@ const Reward = (prop) => {
                 <Grid.Column width={10} textAlign="right" style={{ paddingRight: 20 }}>
                 <ShowAmount amount={prop.item.win} /><br/>
                   
-                    {prop.item.game == "BlackjackMulti" && (
-                        <>
-                            BlackJack - <>{JSON.parse(prop.item.userdata).mode.replace("PerfectPer", "Perfect Pairs")}</>
-                        </>
-                    )}
-                    {prop.item.game == "Baccarat" && prop.item.x > 10 && (
-                        <>
-                            Baccarat - <>{JSON.parse(prop.item.userdata).seat == 1 ? JSON.parse(prop.item.userdata).mode.replace("Pair", "Perfect Pair").replace("3card", "Either Pair") : JSON.parse(prop.item.userdata).mode.replace("3card", "3 Card")}</>
-                        </>
+                    {prop.item.game == "777Slot" && <small>777Slot</small>}
+          {prop.item.game == "BlackjackMulti" && <small>BlackJack - <small>{JSON.parse(prop.item.userdata).mode.replace("PerfectPer", "Perfect Pairs")}</small></small>}
+          {prop.item.game == "Baccarat" && prop.item.x > 10 && (
+                        <small>
+                            Baccarat - <small>{JSON.parse(prop.item.userdata).seat == 1 ? JSON.parse(prop.item.userdata).mode.replace("Pair", "Perfect Pair").replace("3card", "Either Pair") : JSON.parse(prop.item.userdata).mode.replace("3card", "3 Card")}</small>
+                        </small>
                     )}
                     {prop.item.game == "Baccarat" && prop.item.x <= 10 && (
-                        <>
-                            Baccarat - <>{JSON.parse(prop.item.userdata).seat}</>
-                        </>
+                        <small>
+                            Baccarat - <small>Tie</small>
+                        </small>
                     )}
-                    {prop.item.game == "Roulette" && (
-                        <>
-                            {prop.item.x == 36 ? (
-                                <>
-                                    Roulette - <>Bet on #{JSON.parse(prop.item.userdata).betId.payload}</>
-                                </>
-                            ) : (
-                                <>
-                                    Roulette - <>Bet on {JSON.parse(prop.item.userdata).betId.id}</>
-                                </>
-                            )}
-                        </>
-                    )}
-                    {prop.item.game == "Wheel" && (
-                        <>
-                            Wheel - <>Bet on x{JSON.parse(prop.item.userdata).x}</>
-                        </>
-                    )}
-                    {prop.item.game == "777Slot" && (
-                        <>
-                            777 Slot - <>Bet <ShowAmount amount={JSON.parse(prop.item.userdata).win/JSON.parse(prop.item.userdata).x} /></>
-                        </>
-                    )}
+          {prop.item.game == "Roulette" && <>{prop.item.x == 36 ? <small>Roulette - <small>Bet on #{JSON.parse(prop.item.userdata).betId.payload}</small></small> : <small>Roulette - <small>Bet on {JSON.parse(prop.item.userdata).betId.id}</small></small>}</>}
+          {prop.item.game == "Wheel" && <small>Wheel - <small>Bet on x{JSON.parse(prop.item.userdata).x}</small></small>}
                     {convertDateToJalali(prop.item.date)}
                 </Grid.Column>
             </Grid.Row>
