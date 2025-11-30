@@ -151,13 +151,9 @@ const Dashboard = (prop) => {
     const [sessionmyKey, setSessionmyKey] = useState(defGamesStatus);
     useEffect(() => {
         var _gameOptions = [];
-        _gameOptions.push({
-            key: "---",
-            text: "---- MultiPlayer Games ----",
-            value: "",
-        });
+   
         {
-            console.log(gameDataMain);
+      
             
             gameDataMain.map((gamename, i) => {
                 var game = gamename.toLowerCase();
@@ -171,23 +167,7 @@ const Dashboard = (prop) => {
                 }
             });
         }
-        _gameOptions.push({
-            key: "---3",
-            text: "------ Casino Games ------",
-            value: "",
-        });
-        {
-            gameData.map((gamename, i) => {
-                var game = gamename.toLowerCase();
-                if (game != mainGame && i > 0 && defGamesStatus[game]) {
-                    _gameOptions.push({
-                        key: game,
-                        text: gameDataName[i],
-                        value: gamename,
-                    });
-                }
-            });
-        }
+     
         setGameOptions(_gameOptions);
         prop.reportWindowSize();
     }, [mainGame]);

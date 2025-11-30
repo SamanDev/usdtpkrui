@@ -50,7 +50,7 @@ export const MyToast = (title, icon) => {
     position: "top-end",
     background: "#4e4e4e",
     showConfirmButton: false,
-    timer: 10000,
+    timer: 1000000,
     timerProgressBar: true,
     customClass: {
       htmlContainer: "position-absolute p-2 lh-base",
@@ -101,17 +101,17 @@ export const MyToastActive = (title, handleOpenTable) => {
     toast: true,
     position: "top",
     confirmButtonText: "Open",
-    padding: "1.2em",
+   
     showCloseButton: true,
     buttonsStyling: false,
     customClass: {
-      htmlContainer: "p-2 lh-base",
+      htmlContainer: "p-2 lh-base alert",
       timerProgressBar: "bg-gold",
-      actions: "",
-      confirmButton: "position-absolute ui button mini red",
+      actions: "position-absolute ",
+      confirmButton: "ui button mini red right floated",
     },
     background: "#000",
-    timer: 300000,
+    timer: 3000,
     timerProgressBar: true,
   });
 
@@ -119,7 +119,7 @@ export const MyToastActive = (title, handleOpenTable) => {
     html:
       "<small class='text-gold lh-bold'>" +
       title.name +
-      "</small><br/> is opened.",
+      "</small> is opened.",
   }).then((result) => {
     if (result.isConfirmed) {
       handleOpenTable(title.name);

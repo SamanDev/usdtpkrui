@@ -11,7 +11,7 @@ import { cashierService } from "../../../../services/cashier";
 import Social from "../../../../utils/social";
 
 import Trans from "../../../../utils/getword";
-const supportDepartments = "Cips satın alma,Casino oyunları,Teknik destek".split(",");
+const supportDepartments = "Buy Chips,Cashout,Technical".split(",");
 
 const countryOptions = [];
 supportDepartments.map(function (bank, i) {

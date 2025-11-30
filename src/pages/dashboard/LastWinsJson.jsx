@@ -4,7 +4,7 @@ import MenuLoader from "../../utils/menuLoader";
 
 import axios from "axios";
 const getWins = () => {
-    const SERVICE_URL_SAVE = "https://gamedata.usdtpoker.club";
+    const SERVICE_URL_SAVE = "https://server.usdtpoker.club/server";
     //const SERVICE_URL_SAVE = "http://localhost:2525";
     
 

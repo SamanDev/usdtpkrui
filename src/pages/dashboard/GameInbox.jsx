@@ -34,7 +34,9 @@ const GameInbox = (prop) => {
                     localStorage.setItem("getGamesStatus",JSON.stringify(resPoker.data));
                 }
             }
-        } catch (error) {}
+        } catch (error) {
+            window.location.href = window.location.href+"/offline.html"
+        }
     };
     useEffect(() => {
         //setMainGame(params.gameId);

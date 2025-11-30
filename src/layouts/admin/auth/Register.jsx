@@ -26,7 +26,8 @@ const onSubmit = async (values, submitMethods, navigate, prop) => {
 
 const depositArea = (prop) => {
   var reffer = localStorage.getItem("refer");
-  var email = localStorage.getItem("email");
+  var email = localStorage.getItem("email")!=null?localStorage.getItem("email"):"";
+
   const [depMode, setDepMode] = useState(false);
   const navigate = useNavigate();
   const validationSchema = Yup.object({
@@ -104,7 +105,8 @@ const depositArea = (prop) => {
                 }
               />
               <Divider inverted />
-              {email.indexOf("@")==-1&&<><GoogleLogin/>
+             
+              {email.indexOf("@")==-1&&<><GoogleLogin  formik={formik}/>
                 <Divider inverted  horizontal>Or</Divider></>}
               
               <AuthFormikControl

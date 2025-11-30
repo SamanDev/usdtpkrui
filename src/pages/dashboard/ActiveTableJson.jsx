@@ -180,6 +180,7 @@ const ActiveTable = (prop) => {
             if (x.minstack < loginToken?.balance && x.status.indexOf("2/") > -1 && x?.class.indexOf("update") > -1 && x.name.indexOf(fil) !== -1 && !prop.activePanel) {
                 MyToastActive(x, prop.handleOpenTable);
             }
+          
         });
     }, [_filterData]);
 

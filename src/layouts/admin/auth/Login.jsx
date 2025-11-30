@@ -45,7 +45,7 @@ const depositArea = (prop) => {
 
     var validationSchema = Yup.object({
         username: Yup.string().required(Trans("req_minUser")).min(3, Trans("req_minUser")).max(12, Trans("req_maxUser")),
-    
+
         password: Yup.string().required(Trans("req_minPass")).min(8, Trans("req_minPass")),
     });
     return (
@@ -126,8 +126,8 @@ const depositArea = (prop) => {
                                 {Trans("loginheader")}
                             </Header>
                             <Divider hidden />
-<GoogleLogin {...prop}/>
-<Divider inverted  horizontal>Or</Divider>
+                            <GoogleLogin {...prop} formik={formik} />
+                            <Divider inverted horizontal>Or</Divider>
                             {/* {keysArea()} */}
                             <AuthFormikControl formik={formik} control="input" type="text" name="username" label={Trans("username")} labelcolor={prop.labelcolor} size={prop.size} maxLength="12" autoComplete="username" />
                             <AuthFormikControl formik={formik} control="input" type="password" name="password" label={Trans("password")} labelcolor={prop.labelcolor} size={prop.size} autoComplete="password" />
@@ -136,7 +136,7 @@ const depositArea = (prop) => {
                                 color="black"
                                 className="farsi-inline"
                                 style={{
-                                    
+
                                     display: "block",
                                     padding: "20px 10px",
                                     cursor: "pointer",

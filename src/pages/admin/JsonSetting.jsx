@@ -101,7 +101,7 @@ function Admin(prop) {
     return null;
   }
   var siteInfoNew = siteInfo;
-  /* siteInfoNew.levelUps = [
+   /* var newleveluos = [
     {
         "id": 1,
         "level": 1,
@@ -732,7 +732,13 @@ function Admin(prop) {
         "point": 3280000000,
         "reward": 164000000
     }
-] */
+] 
+newleveluos.map((lvl)=>{
+    lvl.point = lvl.point/1000;
+    lvl.reward = lvl.reward/1000;
+}
+)
+siteInfoNew.levelUps = newleveluos */
   let input = '{"Settings":' + JSON.stringify(sordData(siteInfoNew)) + "}";
   input = JSON.parse(input)
   const saveObj = async (info) => {
