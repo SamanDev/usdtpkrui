@@ -112,7 +112,7 @@ function App(prop) {
         //showTtoD();
 
         if (setsize) {
-            //return false;
+            return false;
         }
 
         setsize = true;
@@ -121,7 +121,7 @@ function App(prop) {
         $("#lazyarea").removeAttr("id");
         //clearTimeout(btime);
 
-        btime = setTimeout(() => {
+        setTimeout(() => {
             let viewportWidth = window.innerWidth;
             let viewportHeight = window.innerHeight;
 
@@ -139,7 +139,7 @@ function App(prop) {
             }
             try {
                 const navbar = document.getElementById("navbar");
-                let pHeight = viewportHeight - navbar.offsetHeight+3;
+                let pHeight = viewportHeight - navbar.offsetHeight;
 
                 if ($("body").hasClass("fullscreen")) {
                     pHeight = viewportHeight;
