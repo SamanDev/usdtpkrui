@@ -348,7 +348,9 @@ input.farsi {
     background-position-y: 0%, 0%;
     background-size: auto, auto;
 }
-
+.ui.inverted[class*="vertically divided"].grid>.row:before {
+    background: rgba(255, 255, 255, .1);
+}
 .swal-icon--success__hide-corners,
 .swal-icon--success:after,
 .swal-icon--success:before {
